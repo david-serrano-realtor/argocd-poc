@@ -15,7 +15,14 @@ spec:
     spec:
       containers:
         - name: webhook
-          image: webhook:latest
-          imagePullPolicy: Never
+          image: webhook:latest  
           ports:
             - containerPort: 8443
+          volumeMounts:
+            - name: tls-secret
+              mountPath: /tls
+              readOnly: true
+      volumes:
+        - name: tls-secret
+          secret:
+            secretName: label-injector-tls
