@@ -4,7 +4,7 @@ metadata:
   name: label-injector
   namespace: default
 spec:
-  replicas: 0
+  replicas: 1
   selector:
     matchLabels:
       app: label-injector
