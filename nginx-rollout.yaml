@@ -3,8 +3,6 @@ kind: Rollout
 metadata:
   name: nginx-rollout
   namespace: default
-  annotations:
-    github.com/project-slug: MoveRDC/acm-operations
 spec:
   replicas: 1
   strategy:
@@ -17,6 +15,8 @@ spec:
       app: nginx
   template:
     metadata:
+      annotations:
+        github.com/project-slug: "MoveRDC/acm-operations"
       labels:
         app: nginx
     spec:
